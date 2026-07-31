@@ -51,7 +51,7 @@ int main()
             
     } while (E <= 0);
 
-    int iter = iterCalc(a, b, E);
+    int iter = iterCalc(a, b, E); // Total Number of Iteration Calculation using Furmula
 
     printf("\nIter\t a\t\t b\t\t m\t\t f(m)\n");
 
