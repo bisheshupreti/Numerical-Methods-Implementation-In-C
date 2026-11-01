@@ -1,7 +1,10 @@
+
 // dy/dx = x^2 + y^2
+// Modified Euler's Method
 
 #include <stdio.h>
 #include <math.h>
+
 float function(float x_n, float y_n)
 {
     return pow(x_n, 2) + pow(y_n, 2);
@@ -9,9 +12,7 @@ float function(float x_n, float y_n)
 
 int main()
 {
-
     float x, x_n, y_n, y_new, h, k1, k2;
-    int i;
 
     printf("Enter Initial value of x: ");
     scanf("%f", &x_n);
@@ -25,11 +26,9 @@ int main()
     printf("Enter value X at Which You want to know value of Y: ");
     scanf("%f", &x);
 
-    int n = ceil((x - x_n) / h);
-
-    for (i = 1; i <= n; i++)
+    while (x_n < x)
     {
-        if (i == n)
+        if (x_n + h > x)
         {
             h = x - x_n;
         }
@@ -48,6 +47,7 @@ int main()
         x_n += h;
         y_n = y_new;
     }
+
     printf("\ny(%.4f) = %.4f", x_n, y_n);
 
     return 0;
